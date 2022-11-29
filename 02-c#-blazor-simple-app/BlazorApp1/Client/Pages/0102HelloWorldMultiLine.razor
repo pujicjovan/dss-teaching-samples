@@ -1,0 +1,22 @@
+﻿@page "/0102helloworldmultiline"
+
+<PageTitle>Hello World multi line</PageTitle>
+
+<button @onclick="SayHello">Say Hello</button>
+
+<br/>
+<br/>
+
+<div style="border:solid; border-color:black">
+  <pre>@message</pre>
+</div>
+
+@code {
+    private string message = "";
+
+    private void SayHello()
+    {
+        message = "Hello world!!!";
+        message += Environment.NewLine + "Greetings from IMBI DSS";
+    }
+}
