@@ -1,0 +1,42 @@
+﻿@page "/0202intoperators"
+
+<PageTitle>Operators int</PageTitle>
+
+<input @bind="numberOne"/>
+
+<br/>
+
+<input @bind="numberTwo"/>
+
+<br/>
+<br/>
+
+<button @onclick="Add">Add</button> &nbsp; <button @onclick="Subtract">Subtract</button> &nbsp;
+
+<br/>
+<br/>
+
+<div style="border:solid; border-color:black">
+  <pre>@message</pre>
+</div>
+
+@code {
+    private string message = "";
+
+    private int numberOne=0;
+    private int numberTwo=0;
+
+    private void Add()
+    {
+        int sum = numberOne + numberTwo;
+        message = "Sum is " + sum;
+        message = message + Environment.NewLine;
+    }
+
+    private void Subtract()
+    {
+        int difference = numberOne - numberTwo;
+        message = "Difference is " + difference;
+        message = message + Environment.NewLine;
+    }
+}
