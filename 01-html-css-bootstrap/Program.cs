@@ -16,6 +16,7 @@ namespace _03_html_css_bootstrap
             CreateHostBuilder(args).Build().Run();
         }
 
+        
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
