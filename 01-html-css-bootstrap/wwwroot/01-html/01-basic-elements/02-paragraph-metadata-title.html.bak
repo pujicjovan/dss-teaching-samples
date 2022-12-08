@@ -11,11 +11,8 @@
 <body>
 
     <p> Element title defines title of the HTML document. </p>
-    <!--
-	<p> The title is shown on the web browser's tab during browsing 
-	and during SE search. </p>
+    <p> The title is shown on the web browser's tab during browsing and during SE search. </p>
     <p> HTML document also have metadata.</p>
-	   -->
     <p> Metadata describes data conained within HTML document.</p>
 
 
