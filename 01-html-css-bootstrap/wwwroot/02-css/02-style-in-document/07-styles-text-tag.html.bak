@@ -31,7 +31,7 @@
         
         mickey {
             color: darkblue;
-            background-color: lightgray;
+            background-color: gray;
         }
     </style>
 </head>

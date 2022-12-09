@@ -6,7 +6,6 @@
     <style>
         body {
             background-color: lightgrey;
-            color: darkgreen;
         }
         
         h1 {
@@ -15,12 +14,12 @@
         
         p {
             background-color: darkgrey;
-            color: rgb(170, 42, 141);
+            color: rgb(170, 84, 141);
         }
-		
-		ul{
-			color: rgb(20, 42, 191);
-		}
+        
+        #dark-one {
+            color: black;
+        }
     </style>
 </head>
 
@@ -33,7 +32,7 @@
     <p>
         This is the second paragraph.
     </p>
-    <p style="color:black">
+    <p id="dark-one">
         This is the third paragraph.
     </p>
 
@@ -45,11 +44,4 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae recusandae sint deserunt minus dolorum repellendus velit cupiditate, quo eum debitis est, voluptates quidem placeat laudantium vel voluptatem corporis. Voluptate, beatae. Lorem ipsum
         dolor sit amet consectetur adipisicing elit. Debitis ex quo itaque deserunt. Optio minima voluptate pariatur nulla laboriosam vitae, expedita, quia nihil, voluptatibus assumenda dolorem deserunt maiores quidem esse?
     </p>
-	<ul>
-	   <li> Coffie </li>
-	   <li> Tea </li>
-	   <li> Beer </li>
-	<ul>
 </body>
-
-</html>

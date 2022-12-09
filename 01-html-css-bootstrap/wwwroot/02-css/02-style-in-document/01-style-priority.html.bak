@@ -19,7 +19,7 @@
         }
 		
 		ul{
-			color: rgb(20, 42, 191);
+			color: rgb(20, 42, 141);
 		}
     </style>
 </head>
