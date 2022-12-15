@@ -1,0 +1,56 @@
+﻿@page "/0302ifelsebranch"
+
+<PageTitle>Minimum</PageTitle>
+
+<br/>
+<select @bind="shape">
+  <option value="square">Square</option>
+  <option value="circle">Circle</option>
+</select>
+<br/>
+<input @bind="x"/>
+<br/>
+<br/>
+<button @onclick="CircumferenceArea">Circumference and Area</button> &nbsp; 
+<br/>
+<br/>
+<br/>
+<input @bind="circumference"/>
+<br/>
+<input @bind="area"/>
+
+
+@code {
+    private double pi = 3.1417;
+
+    private string shape = "";
+
+    private double x = 0;
+
+    private double circumference;
+
+    private double area;
+
+    private void CircumferenceArea()
+    {
+        System.Console.WriteLine("Shape: " + shape + ". x: " + x + ".");
+        if (shape == "circle")
+        {
+            circumference = 2 * pi * x;
+            area = pi * x * x;
+        }
+        else if (shape == "square")
+        {
+            circumference = 4 * x;
+            area = x * x;
+        }
+        else
+        {
+            // we can not calculate area or circumference for this shape
+            circumference = -1;
+            area = -1;
+        }
+        System.Console.WriteLine("Area: " + area + ". Circumference: " + circumference + ".");
+        System.Console.WriteLine();
+    }
+}

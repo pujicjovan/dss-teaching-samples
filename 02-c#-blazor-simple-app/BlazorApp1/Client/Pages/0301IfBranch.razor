@@ -1,0 +1,46 @@
+﻿@page "/0301ifbranch"
+
+<PageTitle>Minimum</PageTitle>
+
+<br/>
+<input @bind="x"/>
+<br/>
+<input @bind="y"/>
+<br/>
+<input @bind="z"/>
+<br/>
+<input @bind="w"/>
+<br/>
+<br/>
+<button @onclick="Minimum">Determine Minimum</button> &nbsp; 
+<br/>
+<br/>
+You can try to enter integers, real numbers and texts that are not numbers at all.
+<br/>
+<br/>
+<input @bind="result"/>
+
+
+@code {
+
+    private double x=0;
+    private double y=0;
+    private double z = 0;
+    private double w = 0;
+    private double result;
+
+    private void Minimum()
+    {
+        System.Console.WriteLine("x: " + x + " y: " + y + " z: " + z + " w: " + w);
+        double min = x;
+        if (y < min)
+            min = y;
+        if (z < min)
+            min = z;
+        if (w < min)
+            min = w;
+        result = min;
+        System.Console.WriteLine("Minimum for x, y, z, w: " + min);
+        System.Console.WriteLine();       
+    }
+}
