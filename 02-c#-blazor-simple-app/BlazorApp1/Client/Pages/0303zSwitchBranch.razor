@@ -1,0 +1,67 @@
+﻿@page "/0303zswitchbranch"
+
+<PageTitle>Minimum</PageTitle>
+
+<br/>
+Operation: 
+<select @bind="selector">
+  <option value="sin">sinus</option>
+  <option value="sinpcos">sinus + cosine</option>
+  <option value="exp">exponent</option>
+  <option value="sqrt">square root</option>
+  <option value="sqr">square</option>
+  <option value="log">logarithm</option>
+  <option value="other">other...</option>
+</select>
+<br/>
+Argument: <input @bind="x"/>
+<br/>
+<br/>
+<button @onclick="CalculateFunction">Calculate</button> &nbsp; 
+<br/>
+<br/>
+<br/>
+<input @bind="f"/>
+<br/>
+
+
+@code {
+
+    private string selector = "sinpcos";
+
+    private double x = 0;
+
+    private double f;
+
+    private void CalculateFunction()
+    {
+        System.Console.WriteLine("Selector: " + selector);
+        System.Console.WriteLine("Argument: " + x);
+        switch (selector)
+        {
+            case "sin":
+                f = System.Math.Sin(x);
+                break;
+            case "sinpcos":
+                f = System.Math.Sin(x) + System.Math.Cos(x);
+                break;
+            case "exp":
+                f = System.Math.Exp(x);
+                break;
+            case "sqrt":
+                f = System.Math.Sqrt(x);
+                break;
+            case "sqr":
+                f = x * x;
+                break;
+            case "log":
+                f = System.Math.Log(x);
+                break;
+            default: //if i is not in the set {0,1,2,3}
+                f = x;
+                break;
+        }
+        System.Console.WriteLine("Result: " + f);
+        System.Console.WriteLine();
+    }
+}

@@ -1,0 +1,59 @@
+﻿@page "/0303switchbranch"
+
+<PageTitle>Minimum</PageTitle>
+
+<br/>
+Operation: 
+<select @bind="selector">
+  <option value="0">sinus</option>
+  <option value="1">sinus + cosine</option>
+  <option value="2">exponent</option>
+  <option value="3">square root</option>
+  <option value="4">other...</option>
+</select>
+<br/>
+Argument: <input @bind="x"/>
+<br/>
+<br/>
+<button @onclick="CalculateFunction">Calculate</button> &nbsp; 
+<br/>
+<br/>
+<br/>
+<input @bind="f"/>
+<br/>
+
+
+@code {
+
+    private int selector = 1;
+
+    private double x = 0;
+
+    private double f;
+
+    private void CalculateFunction()
+    {
+        System.Console.WriteLine("Selector: " + selector);
+        System.Console.WriteLine("Argument: " + x);
+        switch (selector)
+        {
+            case 0:
+                f = System.Math.Sin(x);
+                break;
+            case 1:
+                f = System.Math.Sin(x) + System.Math.Cos(x);
+                break;
+            case 2:
+                f = System.Math.Exp(x);
+                break;
+            case 3:
+                f = System.Math.Sqrt(x);
+                break;
+            default: //if i is not in the set {0,1,2,3}
+                f = x;
+                break;
+        }
+        System.Console.WriteLine("Result: " + f);
+        System.Console.WriteLine();
+    }
+}
