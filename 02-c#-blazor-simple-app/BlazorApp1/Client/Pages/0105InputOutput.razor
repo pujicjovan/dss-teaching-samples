@@ -1,0 +1,35 @@
+﻿@page "/0105inputoutput"
+
+<PageTitle>Input and output</PageTitle>
+
+<input @bind="userInput"/>
+
+<br/>
+<br/>
+
+<button @onclick="Execute">Hello!</button>
+<button @onclick="Clear">Clear</button>
+
+<br/>
+<br/>
+
+<div style="border:solid; border-color:black">
+  <pre>@message</pre>
+</div>
+
+@code {
+    private string message = "";
+    private string userInput = "";
+
+    private void Clear()
+    {
+        message = "";
+        System.Console.WriteLine("Message is cleared.");
+    }
+
+    private void Execute()
+    {
+        message = message + userInput + Environment.NewLine;
+        System.Console.WriteLine("Text is appended to message. Text: " + userInput);
+    }
+}

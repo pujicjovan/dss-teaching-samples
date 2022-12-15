@@ -1,8 +1,9 @@
 ﻿@page "/0203byteshortlongvariables"
 
-<PageTitle>Variables int</PageTitle>
+<PageTitle>Variables byte short long</PageTitle>
 
 <button @onclick="Execute">Do It!</button>
+<button @onclick="Clear">Clear</button>
 
 <br/>
 <br/>
@@ -13,6 +14,11 @@
 
 @code {
     private string message = "";
+
+    private void Clear()
+    {
+        message = "";
+    }
 
     private void Execute()
     {
