@@ -1,4 +1,4 @@
-﻿@page "/0203byteshortlongvariables"
+﻿@page "/0203ByteShortLongVariables"
 
 <PageTitle>Variables byte short long</PageTitle>
 <h1>Types byte short long</h1>
@@ -22,16 +22,24 @@ Output:
 
     private void Execute()
     {
-        byte xb = 100;
-        byte yb = 100;
+        byte xb = 99;
+        byte yb = 101;
+        message = message + "xb = " + xb + Environment.NewLine;
+        message = message + "yb = " + yb + Environment.NewLine;
+        xb += 1; // xb = xb + 1;
+        yb -= 1; // yb = yb - 1;
         message = message + "xb = " + xb + Environment.NewLine;
         message = message + "yb = " + yb + Environment.NewLine;
         byte zb = (byte)(xb + yb);
         message = message + "xb + yb = " + zb + Environment.NewLine;
         message = message + Environment.NewLine;
 
-        xb = 100;
-        yb = 200;
+        xb = 99;
+        yb = 201;
+        message = message + "xb = " + xb + Environment.NewLine;
+        message = message + "yb = " + yb + Environment.NewLine;
+        xb ++; // xb += 1; 
+        yb --; // yb -= 1;
         message = message + "xb = " + xb + Environment.NewLine;
         message = message + "yb = " + yb + Environment.NewLine;
         zb = (byte)(xb + yb);
