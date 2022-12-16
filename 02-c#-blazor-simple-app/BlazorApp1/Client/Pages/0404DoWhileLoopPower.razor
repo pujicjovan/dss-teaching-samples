@@ -1,4 +1,4 @@
-﻿@page "/0402WhileLoopPower"
+﻿@page "/0404DoWhileLoopPower"
 
 <PageTitle>Power</PageTitle>
 <h1>Power</h1>
@@ -20,6 +20,7 @@
         <td style="text-align:center" colspan="2">
             <button title="by forward counting" @onclick="PowerByCountForward">Power</button> &nbsp; 
             <button title="by backward counting" @onclick="PowerByCountBackward">Power</button> &nbsp; 
+            <button title="by decrementing" @onclick="PowerByDecrementing">Power</button> &nbsp; 
         </td>
     </tr>
     <tr>
@@ -58,11 +59,12 @@
             exp = -exp;
         }
         int i = 1;
-        while (i <= exp)
+        do
         {
-            res *= baseOne; // res = res * baseOne;
+            res *= baseOne;
             i++;
         }
+        while (i <= exp);
         if (!exponentIsNegative)
             result = res;
         else
@@ -92,11 +94,47 @@
             exp = -exp;
         }
         int i = exp;
-        while (i >= 1)
+        do
         {
             res *= baseOne; 
             i--;
         }
+        while (i >= 1);
+        if (!exponentIsNegative)
+            result = res;
+        else
+            result = 1 / res;
+        System.Console.WriteLine("Result: " + result);
+        System.Console.WriteLine();
+    }
+
+    private void PowerByDecrementing()
+    {
+        Console.WriteLine("PowerByDecrementing");
+        Console.WriteLine("Base: " + baseOne);
+        Console.WriteLine("Exponent: " + exponent);
+        int exp = exponent;
+        double res = 1;
+        if (exp == 0)
+        {
+            result = res;
+            System.Console.WriteLine("Result: " + result);
+            System.Console.WriteLine();
+            return;
+        }
+        bool exponentIsNegative = false;
+        if (exp < 0)
+        {
+            exponentIsNegative = true;
+            exp = -exp;
+        }
+        int i = exp;
+        do
+        {
+            res *= baseOne;
+            exp--;
+        }
+        while (exp >= 1);
         if (!exponentIsNegative)
             result = res;
         else
