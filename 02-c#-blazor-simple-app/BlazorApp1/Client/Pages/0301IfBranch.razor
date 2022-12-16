@@ -1,25 +1,35 @@
 ﻿@page "/0301ifbranch"
 
 <PageTitle>Minimum</PageTitle>
-
-<br/>
-<input @bind="x"/>
-<br/>
-<input @bind="y"/>
-<br/>
-<input @bind="z"/>
-<br/>
-<input @bind="w"/>
-<br/>
-<br/>
-<button @onclick="Minimum">Determine Minimum</button> &nbsp; 
-<br/>
-<br/>
+<h1>Minimum</h1>
+<p>
 You can try to enter integers, real numbers and texts that are not numbers at all.
-<br/>
+</p>
+<table>
+    <tr>
+        <td>First argument:</td>
+        <td><input @bind="x"/></td>
+    </tr>
+    <tr>
+        <td>Second argument:</td>
+        <td><input @bind="y"/></td>
+    </tr>
+    <tr>
+        <td>Third argument:</td>
+        <td><input @bind="z"/></td>
+    </tr>
+    <tr>
+        <td>Fourth argument:</td>
+        <td><input @bind="w"/></td>
+    </tr>
+    <tr>
+        <td style="text-align:center" colspan="2">
+            <button @onclick="Minimum">Determine Minimum</button> &nbsp; 
+        </td>
+    </tr>
+</table>
 <br/>
 <input @bind="result"/>
-
 
 @code {
 
