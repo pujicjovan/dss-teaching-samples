@@ -18,7 +18,7 @@
     </tr>
     <tr>
         <td>@num !:</td>
-        <td><input style="text-align:right" @bind="factoriel"/></td>
+        <td><input style="text-align:right" @bind="result"/></td>
     </tr>
  </table> 
 <br/>
@@ -27,7 +27,7 @@
 
     private int num = 0;
 
-    private long factoriel;
+    private long result = 1;
 
     private void FactorialByCountForward()
     {
@@ -37,7 +37,7 @@
         if (n < 0)
         {
             Console.WriteLine("Error - argument is negative.");
-            factoriel = long.MinValue;
+            result = long.MinValue;
             return;
         }
         long fakt = 1;
@@ -45,8 +45,8 @@
         {
             fakt *= i;
         }
-        factoriel = fakt;
-        System.Console.WriteLine("Result: " + factoriel);
+        result = fakt;
+        System.Console.WriteLine("Result: " + result);
         System.Console.WriteLine();
     }
 
@@ -58,14 +58,14 @@
         if (n < 0)
         {
             Console.WriteLine("Error - argument is negative.");
-            factoriel = long.MinValue;
+            result = long.MinValue;
             return;
         }
         long fakt = 1;
         for (int i = n; i >= 1; i--)
             fakt *= i;
-        factoriel = fakt;
-        System.Console.WriteLine("Result: " + factoriel);
+        result = fakt;
+        System.Console.WriteLine("Result: " + result);
         System.Console.WriteLine();
     }
 
