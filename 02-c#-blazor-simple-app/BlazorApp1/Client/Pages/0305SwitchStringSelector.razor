@@ -1,18 +1,19 @@
-﻿@page "/0303SwitchbBranch"
-
-<PageTitle>Function calculation</PageTitle>
-<h1>Function calculation</h1>
+﻿@page "/0305SwitchStringSelector"
+<PageTitle>Function evaluation</PageTitle>
+<h1>Function evaluation</h1>
 <br/>
 <table>
     <tr>
         <td>Operation:</td>
         <td>
             <select @bind="selector">
-              <option value="0">sinus</option>
-              <option value="1">sinus + cosine</option>
-              <option value="2">exponent</option>
-              <option value="3">square root</option>
-              <option value="4">other...</option>
+              <option value="sin">sinus</option>
+              <option value="sinpcos">sinus + cosine</option>
+              <option value="exp">exponent</option>
+              <option value="sqrt">square root</option>
+              <option value="sqr">square</option>
+              <option value="log">logarithm</option>
+              <option value="other">other...</option>
             </select>
         </td>
     </tr>
@@ -31,12 +32,12 @@
         <td>Result:</td>
         <td><input style="text-align:right" @bind="f"/></td>
     </tr>
- </table>
+ </table> 
 <br/>
 
 @code {
 
-    private int selector = 1;
+    private string selector = "sinpcos";
 
     private double x = 0;
 
@@ -48,17 +49,23 @@
         System.Console.WriteLine("Argument: " + x);
         switch (selector)
         {
-            case 0:
+            case "sin":
                 f = System.Math.Sin(x);
                 break;
-            case 1:
+            case "sinpcos":
                 f = System.Math.Sin(x) + System.Math.Cos(x);
                 break;
-            case 2:
+            case "exp":
                 f = System.Math.Exp(x);
                 break;
-            case 3:
+            case "sqrt":
                 f = System.Math.Sqrt(x);
+                break;
+            case "sqr":
+                f = x * x;
+                break;
+            case "log":
+                f = System.Math.Log(x);
                 break;
             default: //if i is not in the set {0,1,2,3}
                 f = x;
