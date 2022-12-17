@@ -5,22 +5,22 @@
 <PageTitle>Actors</PageTitle>
 <h1>Actors</h1>
 <br />
-<table>
-    <th>
+<table border="1">
+    <tr>
         <td>First name</td>
         <td>Last name</td>
         <td>IMDB score</td>
-    </th>
+    </tr>
     @foreach (Actor act in filmCrew)
     {
-            <tr>
-                <td>@act.FirstName</td>
-                <td>@act.LastName</td>
-                <td>@act.ImdbMark</td>
-             </tr>
+        <tr>
+            <td>@act.FirstName</td>
+            <td>@act.LastName</td>
+            <td>@act.ImdbMark</td>
+        </tr>
     }
 </table>
-<br/>
+<br />
 <button @onclick="AverageIMDB">Average IMDB</button>
 <br />
 
@@ -39,7 +39,13 @@
             FirstName = "Robert"
         };
 
-    private Actor[] filmCrew = { movieStar1, movieStar2 };
+    private Actor[] filmCrew = new Actor[2];
+
+    protected override async Task OnInitializedAsync()
+    {
+        filmCrew[0] = movieStar1;
+        filmCrew[1] = movieStar2;
+    }
 
     private void AverageIMDB()
     {
