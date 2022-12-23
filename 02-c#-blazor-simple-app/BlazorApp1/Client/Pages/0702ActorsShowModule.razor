@@ -1,5 +1,6 @@
-﻿@page "/0701ActorsShow"
+﻿@page "/0702ActorsShowModule"
 
+@using DSS.Helpers;
 @using DSS.Models;
 
 <PageTitle>Actors</PageTitle>
@@ -66,9 +67,9 @@
     private void AverageIMDB()
     {
         showResult = true;
-        double sum = 0;
-        foreach (Actor a in filmCrew)
-            sum += a.ImdbMark;
-        avgIMDB = sum / filmCrew.Length;
+        double[] vals = new double[filmCrew.Length];
+        for (int i = 0; i < vals.Length; i++)
+            vals[i] = filmCrew[i].ImdbMark;
+        avgIMDB = ArrayHelper.Avg(vals);
     }
 }

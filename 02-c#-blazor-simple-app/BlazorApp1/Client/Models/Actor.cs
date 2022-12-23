@@ -1,4 +1,4 @@
-namespace DSS.VanityFair
+namespace DSS.Models
 {
     public class Actor
     {

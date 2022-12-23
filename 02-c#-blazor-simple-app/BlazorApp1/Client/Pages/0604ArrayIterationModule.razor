@@ -1,4 +1,6 @@
-﻿@page "/0602ArrayIteration"
+﻿@page "/0604ArrayIterationModule"
+
+@using DSS.Helpers;
 
 <PageTitle>Arrays - iteration</PageTitle>
 <h1>Arrays - iteration</h1>
@@ -16,34 +18,20 @@ Output:
 
     private void Execute()
     {
-        byte[] bytA = new byte[10];
+        byte[] bytA = new byte[30];
         bytA[2] = 45;
-        bytA[7] = 42;
-        message += "byteA: ";
-        for (int i=0; i<bytA.Length; i++)
-        {
-            message += bytA[i] + " ";
-        }
-        message += Environment.NewLine;
+        for (int i = 3; i < bytA.Length; i++)
+            bytA[i] = (byte)(2 * i);
+        message += "bytA: " + DSS.Helpers.ArrayHelper.ElementsToString(bytA) + Environment.NewLine;
         Console.WriteLine(message);
 
         String spec = " special";
         String[] seasons = { " spring", " autumn", spec + " winter", " summer" };
-        message += "seasons: ";
-        for (int i = 0; i < seasons.Length; i++)
-        {
-            message += "'" + seasons[i] + "' ";
-        }
-        message += Environment.NewLine;
+        message += "seasons: " + ArrayHelper.ElementsToString(seasons) + Environment.NewLine;
         Console.WriteLine(message);
 
         int[] arr = { 24, 48, 96, 192, 36, 72, 144 };
-        message += "arr: ";
-        foreach (int x in arr)
-        {
-            message += x + " ";
-        }
-        message += Environment.NewLine;
+        message += "arr: " + ArrayHelper.ElementsToString(arr) + Environment.NewLine;
         Console.WriteLine(message);
 
         string[] strA = new string[40];
@@ -52,12 +40,7 @@ Output:
         strA[4] = "donald";
         strA[5] = "duck";
         strA[6] = "goofy";
-        message += "strA: ";
-        foreach (string s in strA)
-        {
-            message += "'" + s + "' ";
-        }
-        message += Environment.NewLine;
+        message += "strA: " + ArrayHelper.ElementsToString(strA) + Environment.NewLine;
         Console.WriteLine(message);
     }
 }

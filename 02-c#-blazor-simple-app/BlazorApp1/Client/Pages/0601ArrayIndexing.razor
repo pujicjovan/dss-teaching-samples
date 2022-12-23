@@ -41,15 +41,18 @@ Output:
         System.Console.WriteLine("bytA[0]: " + bytA[0]);
         message += "bytA[1]: " + bytA[1] + Environment.NewLine;
         System.Console.WriteLine("bytA[1]: " + bytA[1]);
-        message += "bytA[10]: " + bytA[2] + Environment.NewLine;
+        message += "bytA[2]: " + bytA[2] + Environment.NewLine;
         System.Console.WriteLine("bytA[2]: " + bytA[2]);
+        message += "bytA[2]+bytA[0]: " + (bytA[2] + bytA[0]) + Environment.NewLine;
+        System.Console.WriteLine("bytA[2]+bytA[0]: " + (bytA[2] + bytA[0]));
         message += "bytA.Length: " + bytA.Length + Environment.NewLine;
         System.Console.WriteLine("bytA.Length: " + bytA.Length);
         message += Environment.NewLine;
         System.Console.WriteLine();
 
         String s = " special ";
-        String[] seasons = { " spring", " autumn", s + "winner", " summer" };
+        String[] adj = { s, " very ", " much " };
+        String[] seasons = { " spring", " autumn", adj[0] + adj[1] + adj[2] + "winner", " summer" };
         message += "seasons: " + seasons.ToString() + Environment.NewLine;
         System.Console.WriteLine("seasons: " + seasons.ToString());
         message += "seasons.Length: " + seasons.Length + Environment.NewLine;
@@ -62,7 +65,7 @@ Output:
         System.Console.WriteLine();
 
         int[] numbers = { 24, 48, 96, 192, 36, 72, 144 };
-        message += "numbers: " + seasons.ToString() + Environment.NewLine;
+        message += "numbers: " + numbers.ToString() + Environment.NewLine;
         System.Console.WriteLine(numbers.ToString());
         message += "numbers.Length: " + numbers.Length + Environment.NewLine;
         System.Console.WriteLine("numbers.Length: " + numbers.Length);
@@ -72,7 +75,7 @@ Output:
         System.Console.WriteLine(numbers[1] + numbers[2]);
         message += "numbers[numbers.Length - 1]: " + numbers[numbers.Length - 1] + Environment.NewLine;
         System.Console.WriteLine(numbers[numbers.Length - 1]);
-        int indexExpression = 15-9;
+        int indexExpression = 15-12;
         message += "indexExpression: " + indexExpression + Environment.NewLine;
         message += "numbers[indexExpression]: " + numbers[indexExpression] + Environment.NewLine;
         System.Console.WriteLine("indexExpression: " + indexExpression);
