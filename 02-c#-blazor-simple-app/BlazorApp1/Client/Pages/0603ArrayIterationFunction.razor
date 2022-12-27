@@ -46,8 +46,10 @@ Output:
 
     private void Execute()
     {
-        byte[] bytA = new byte[10];
+        byte[] bytA = new byte[30];
         bytA[2] = 45;
+        for (int i = 3; i < bytA.Length; i++)
+            bytA[i] = (byte)(2 * i);
         message += "bytA: " + ElementsToString(bytA) + Environment.NewLine;
         Console.WriteLine(message);
 
