@@ -36,5 +36,8 @@
     private void NavigateTo(Actor actor)
     {
         _navigationManager.NavigateTo("/actordetail/" + @actor.Id);
+        _messagingService.Add("Actor " + actor.FirstName + " "
+            + actor.LastName + " selected, from dashboard.");
+
     }
 }

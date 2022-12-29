@@ -12,7 +12,7 @@ else
         {
             <li>
                 <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
-                - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
+                - @a.DateOfBith?.ToString("dd.MM.yyyy") ( @a.CountryCode )
             </li>
         }
     </ul>

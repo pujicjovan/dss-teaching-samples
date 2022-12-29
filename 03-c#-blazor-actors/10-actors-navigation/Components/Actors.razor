@@ -34,7 +34,7 @@ else
 
     private async Task OnSelect(Actor actor)
     {
-        await _messagingService.Add("Actor selected: " + actor.FirstName + " " 
+        await _messagingService.Add("Actor selected (from actors): " + actor.FirstName + " " 
             + actor.LastName);
         _navigationManager.NavigateTo("/actordetail/" + actor.Id);
     }

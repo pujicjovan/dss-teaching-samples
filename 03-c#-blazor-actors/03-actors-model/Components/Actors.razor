@@ -1,9 +1,11 @@
-<h2>Details for @_actor.FirstName @_actor.LastName.ToUpper()</h2>
+<h2>
+    Details for @_actor.FirstName @_actor.LastName.ToUpper()
+</h2>
 <div><span>id: </span>@_actor.Id</div>
 <div><span>first name: </span>@_actor.FirstName</div>
 <div><span>last name: </span>@_actor.LastName</div>
 <div><span>country: </span>@_actor.CountryCode</div>
-<div><span>date of birth: </span> @_actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+<div><span>date of birth: </span> @_actor.DateOfBirth?.ToString("MM/dd/yyyy")</div>
 
 @code 
 {
@@ -12,7 +14,7 @@
                 Id = 3,
                 FirstName = "Robert",
                 LastName = "De Niro",
-                DateOfBith = new DateTime(1943, 12, 17),
+                DateOfBirth = new DateTime(1943, 12, 17),
                 CountryCode = "US"
             };
 }
