@@ -2,7 +2,7 @@ using Supabase.Core;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
-namespace DssSupabase
+namespace DssSupabase02
 {
 
     [Table("Actor")]
